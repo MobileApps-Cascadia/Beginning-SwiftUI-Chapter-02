@@ -19,6 +19,7 @@
 		E4876CAE29D4A66D008D357E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E4876CB029D4A670008D357E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4876CB329D4A670008D357E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E4876CBB29D4A76F008D357E /* Closures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Closures.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +52,7 @@
 		E4876CAB29D4A66D008D357E /* Chapter02 */ = {
 			isa = PBXGroup;
 			children = (
+				E4876CBB29D4A76F008D357E /* Closures.playground */,
 				E4876CAC29D4A66D008D357E /* Chapter02App.swift */,
 				E4876CAE29D4A66D008D357E /* ContentView.swift */,
 				E4876CB029D4A670008D357E /* Assets.xcassets */,
