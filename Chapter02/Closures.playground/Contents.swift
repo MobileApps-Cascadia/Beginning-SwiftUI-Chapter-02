@@ -1,3 +1,24 @@
+let addNumbers = { (num1: Int, num2: Int) -> Int in
+    let sum = num1 + num2
+    print("\(num1) + \(num2) = \(sum)")
+    return sum
+}
+
+func performOperation(num1: Int, num2: Int, operation: (Int, Int) -> Int) {
+    print("Performing operation...")
+    let result = operation(num1, num2)
+    print("The result is: \(result)")
+}
+
+// calling performOperation with normal parameter syntax
+performOperation(num1: 3, num2: 4, operation: addNumbers)
+
+// calling performOperation with trailing closure syntax
+performOperation(num1: 3, num2: 4) { (num1, num2) -> Int in
+    let product = num1 * num2
+    print("\(num1) * \(num2) = \(product)")
+    return product
+}
 
 print("\n=======  Closure: basic function definition")
 
