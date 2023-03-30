@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var message = true
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+            Toggle(isOn: $message) {
+                Text("Toggle message on/off")
+            }
+            if message {
+                Text ("Here's a secret message!")
+                    .background(Color.yellow)
+                    .padding()
+            }
+        }.padding()
     }
 }
 
