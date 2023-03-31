@@ -1,3 +1,31 @@
+let addClosure = { (num1: Int, num2: Int) -> Int in
+    let sum = num1 + num2
+    //print("\(num1) + \(num2) = \(sum)")
+    return sum
+}
+
+print( addClosure(21,31))
+let result = addClosure(30, 72)
+print(result)
+
+func someFunction(Closure: (Int, Int) -> Int) {
+    // function body goes here
+    print("About to call the closure method")
+    let result1 = Closure(21,31)
+    print("got back \(result1)")
+    
+    print("About to call it again" )
+    print(Closure(30,72))
+}
+someFunction(Closure: addClosure)
+
+print("\n=======  Closure I think?")
+
+someFunction( ) {(s:Int, d:Int)->Int in let sum2 = s + d
+    return sum2}
+
+
+// My work is above this comment which I am making really long so it is very Obvious to me Kenny Luchau
 
 print("\n=======  Closure: basic function definition")
 
