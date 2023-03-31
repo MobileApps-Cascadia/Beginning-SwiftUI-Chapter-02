@@ -1,3 +1,26 @@
+let addTwoNumbers = {( num1: Int, num2: Int) -> Int in
+    let sum = num1 + num2
+    print("\(num1) + \(num2) = \(sum)")
+    return sum
+    //return num1 + num2
+}
+print("result is: " + String(addTwoNumbers(3, 4)))
+
+func sumClosure(num1: Int, num2: Int, addNumbers: (Int, Int) -> Int) {
+    print("Adding numbers...")
+    let result = addNumbers(num1, num2)
+    print("The sum is: \(result)")
+}
+
+(sumClosure(num1: 3, num2: 4, addNumbers: addTwoNumbers))
+
+
+sumClosure(num1: 3, num2: 4) { (num1, num2) -> Int in
+    let product = num1 * num2
+    print("'\(num1) and \(num2)' are now multiplied and equal \(product)")
+    return product
+}
+
 
 print("\n=======  Closure: basic function definition")
 
@@ -37,7 +60,11 @@ func someFunctionThatTakesAClosure(theClosure: (String) -> String) {
 someFunctionThatTakesAClosure(theClosure: myClosure)
 
 print("\n=======  Passing an unnamed closure expression to a function / method:")
-someFunctionThatTakesAClosure(theClosure: {(s:String)->String in s + " (Unnamed closure expression)"} )
+someFunctionThatTakesAClosure(theClosure:
+                                {   (s:String)->String in
+                                    s + " (Unnamed closure expression)"
+                                }
+                            )
 
 print("\n=======  Passing a TRAILING closure expression to a function / method:")
 someFunctionThatTakesAClosure( ) {(s:String)->String in s + " (Trailing closure expression)"}
