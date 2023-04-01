@@ -77,3 +77,39 @@ if #available(iOS 15, *) {
     PlaygroundPage.current.setLiveView(SwiftUIViewWithCode())
 
 }
+
+// A. Create a CLOSURE that takes two numbers as parameters, adds them together
+
+let addTwoNumbers = {(num1: Int, num2: Int) -> Int in
+    let sum = num1+num2
+    print("\(num1) + \(num2) = \(sum)")
+    return sum
+}
+
+// B. Create a METHOD that accepts the closure from the previous part of this exercise as an argument.
+
+func calculate (operation: (Int, Int ) -> Int) {
+    print("performing operation...")
+    let result = operation(3, 4)
+    print("The result is: \( result)")
+}
+
+// Calling the mthedo using normal parameter syntax
+
+calculate(operation: addTwoNumbers)
+
+// C. calling the method using trailing closure syntax
+
+calculate { (num1: Int, num2: Int) -> Int in
+    let sum = num1 + num2
+    print("\(num1) + \(num2) = \(sum)")
+    return sum
+}
+
+// Create a new closure right next to the method call
+
+calculate{ (num1: Int, num2: Int) -> Int in
+    let product = num1 * num2
+    print("\(num1) * \(num2) = \(product)")
+    return product
+}

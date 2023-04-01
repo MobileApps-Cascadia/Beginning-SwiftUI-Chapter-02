@@ -10,7 +10,11 @@ import SwiftUI
 struct ContentView: View {
     @State private var message = true
     var body: some View {
-        VStack {
+        let x = 2
+        let y = 3
+        let sum = x + y
+        
+       return VStack {
             Toggle(isOn: $message) {
                 Text("Toggle message on/off")
             }
@@ -18,6 +22,7 @@ struct ContentView: View {
                 Text ("Here's a secret message!")
                     .background(Color.yellow)
                     .padding()
+                Text ("The sum of \(x) and  \(y) is \(sum)")
             }
         }.padding()
     }
@@ -28,3 +33,9 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+//The explicit return statement can be useful where you need control over the flow of your code or when you want to write complex logic. While using an explicit return statement can be useful in some cases, in general, it's better to stick to a more declarative approach in SwiftUI to keep our code simple, readable, and maintainable.
+//
+//
+//
+//
