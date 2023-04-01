@@ -24,7 +24,25 @@ print(greetingClosure("Mary"))
 
 print("\n=======  Passing Closure to a function / method:")
 
+
+func addTwoNumbers( num1: Int, num2 y: Int) -> Int {
+    let sum = num1 + y
+    print("HellO!")
+    return sum
+    // return num1 + num2
+}
+
+//func addTwoNumbers( _ x: Int, _ y: Int) -> Int {
+//    let sum = x + y
+//    print("HellO!")
+//    return sum
+//    // return num1 + num2
+//}
+
+print("result is: " + String(addTwoNumbers(num1: 3, num2: 4)))
+
 func someFunctionThatTakesAClosure(theClosure: (String) -> String) {
+    
     // function body goes here
     print("About to call the closure method")
     let result1 = theClosure("Bob")
@@ -37,10 +55,17 @@ func someFunctionThatTakesAClosure(theClosure: (String) -> String) {
 someFunctionThatTakesAClosure(theClosure: myClosure)
 
 print("\n=======  Passing an unnamed closure expression to a function / method:")
-someFunctionThatTakesAClosure(theClosure: {(s:String)->String in s + " (Unnamed closure expression)"} )
+someFunctionThatTakesAClosure(theClosure:
+                                {   ( s: String ) -> String in
+                                    s + " (Unnamed closure expression)"
+                                }
+                             )
 
 print("\n=======  Passing a TRAILING closure expression to a function / method:")
-someFunctionThatTakesAClosure( ) {(s:String)->String in s + " (Trailing closure expression)"}
+someFunctionThatTakesAClosure( )
+                                {   ( s: String ) -> String in
+                                    s + " (Unnamed TRAILING closure expression)"
+                                }
 
 import PlaygroundSupport
 import SwiftUI
@@ -49,10 +74,8 @@ import SwiftUI
 if #available(iOS 15, *) {
     
     struct TypicalSwiftUIView: View {
-        public init() {}
-        
         public var body: some View {
-            Text("Hello World!")
+            Text("Hello World2!")
         }
     }
     
@@ -74,6 +97,6 @@ if #available(iOS 15, *) {
         }
     }
     
-    PlaygroundPage.current.setLiveView(SwiftUIViewWithCode())
+//    PlaygroundPage.current.setLiveView(SwiftUIViewWithCode())
 
 }
